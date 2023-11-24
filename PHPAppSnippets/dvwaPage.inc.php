@@ -571,7 +571,7 @@ function generateSessionToken() {  # Generate a brand new (CSRF) token
 	if( isset( $_SESSION[ 'session_token' ] ) ) {
 		destroySessionToken();
 	}
-	$_SESSION[ 'session_token' ] = md5( uniqid() );
+	$_SESSION[ 'session_token' ] = sha1( uniqid() );
 }
 
 function destroySessionToken() {  # Destroy any session with the name 'session_token'
